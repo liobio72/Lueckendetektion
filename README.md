@@ -11,7 +11,7 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet, da dieser eine grö
 - Wenn eine Lücke umringt ist von einem schmalen Band an Wald/ Bäumen, zählt die Lücke trotzdem als Lücke?
 
 ## Workflow:
-1. LiDAR import
+1. LiDAR import <br>
    swissSURFACE3D Daten im .las format.
 2. DSM ableiten
    Mit 'Export to Raster' und dem Attribut "Classification" und "Z".
