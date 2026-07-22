@@ -12,12 +12,19 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet, da dieser eine grö
 
 ## Workflow:
 1. LiDAR import
+   swissSURFACE3D Daten im .las format.
 2. DSM ableiten
+   Mit 'Export to Raster' und dem Attribut "Classification" und "Z".
 3. DTM ableiten
-4. DTM no_data-Lücken mit interpelation füllen, damit später keine no_data-Lücken als Waldlücken erkannt werden.
+   Mit 'Export to Raster' und dem Filter "Classification = 2 (ground)" und dem Attribut "Z".
+4. DTM no_data-Lücken schliessen
+   Lücken im DTM mit "no_data" mit 'Fill NoData' per interpellation füllen, damit später keine no_data-Lücken als Waldlücken erkannt werden.
 5. CHM (Vegetationshöhenmodell) aus DSM und DTM ableiten.
-6. Vegetationsmaske -> Raster mit Vegetation/ nicht Vegetation
-7. Baummaske -> Raster mit Vegetation über 3 Meter.
+   Mit dem 'Raster Calculator' und der Expression "DSM - DTM" das CHM (Canopy Height Model/ Vegetationshöhenmodell*) erstellen.
+6. Vegetationsmaske ableiten
+   Mit 'Export to Raster' und dem Filter "Classification = 3" erstellen.
+7. Baummaske ableiten
+   Mit 'Raster Calculator' und der Expression "Vegetationsmaske = 1 AND CHM >= 3" die Baummaske erstellen.
 
 ### Geplant:
 8. Euklidische Distanztransformation -> Distanz von einem Pixel zum nächsten Baum-Pixel.
