@@ -8,6 +8,7 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet, da dieser eine grö
 
 ## Fragen:
 - Wenn eine Lücke an einem Ort enger wird und die Traufen näher als 10m beieinander liegen, zählt die Lücke dann als zwei Lücken? sie wird also geschnitten und nicht gelöscht?
+- Wenn eine Lücke umringt ist von einem schmalen Band an Wald/ Bäumen, zählt die Lücke trotzdem als Lücke?
 
 ## Workflow:
 1. LiDAR import
