@@ -31,3 +31,6 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet, da dieser eine grö
 9. Alle Pixel, die mindestens 5 Meter entfernt sind vom nächsten Baum-Pixel auswählen.
 10. 5 Meter Buffer von den ausgewählten Pixel.
 11. Flächen bilden und Polygonisierung.
+
+### Kontrolle:
+12. Vergleich 'Lueckendetektion-Polygone' zu 'Luecken interpretiert Luftbild-Polygone'
