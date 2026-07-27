@@ -32,10 +32,13 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
    Distanz von jedem Pixel mit Value = 2 (potenzielle Lücke) zu einem Pixel mit Value = 1 (Waldfläche). <br>
           -> gap_distance.tif
 6. Pixel mit mindestens 5 Metern Distanz filtern. <br>
-          -> gap_pixels
-9. diese Pixel polygonisieren.
-10. 5 Meter Buffer.
-11. Polygone rausnehmen, die 'forest_typ = 1' schneiden.
+          -> gap_pixels.tif
+9. Polygonisierung der gap_pixels <br>
+          -> gap_polygons.gpkg
+10. 5 Meter Buffer von den gap_polygons
+          -> gap_buffered_polygons.gpkg
+12. Polygone rausnehmen, die Rand von 'forest_typ = 1' schneiden.
+          -> gap_polygons_final.gpkg
 
 ### Geplant:
 - Euklidische Distanztransformation -> Distanz von einem Pixel zum nächsten Baum-Pixel.
