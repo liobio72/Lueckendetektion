@@ -31,7 +31,7 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
 5. Euklidische Distanzanalyse <br>
    Distanz von jedem Pixel mit Value = 2 (potenzielle Lücke) zu einem Pixel mit Value = 1 (Waldfläche). <br>
           -> gap_distance.tif
-6. Pixel mit mindestens 5 Metern Distanz filtern.
+6. Pixel mit mindestens 5 Metern Distanz filtern. <br>
           -> gap_pixels
 9. diese Pixel polygonisieren.
 10. 5 Meter Buffer.
