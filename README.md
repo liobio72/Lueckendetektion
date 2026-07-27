@@ -22,9 +22,13 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
 2. Waldmaske filtern und rasterisieren
    Nur Polygone mit 'forest_typ = 1' (Deckungsgrad der Vegetation über 80%) behalten. Diese zu einem binären Raster ableiten.
           -> forest_tree_mask.tif
-6. Raster für die Suche der Waldlücken
+3. Baummaske ableiten
+   Im Vegetationshoehenmodell nur Punkte mit Höhe >= 3 Meter nehmen und rasterisieren.
+          -> tree_mask.tif
+5. Raster für die Suche der Waldlücken
    Kombinieren der beiden vorherigen Raster mit 3 verschiedenen Values; 0 = Nicht Wald-Fläche, 1 = Waldfläche, 2 = potenzielle Lücken.
           -> waldlueckendetektion_mask.tif
+6. 
 7. Lückendetektion.....
    Die Waldlückendetektion basiert auf einem rasterbasierten Vegetationshöhenmodell. Zunächst werden alle Pixel mit einer Vegetationshöhe von mindestens 3 m als Baumflächen klassifiziert. Die Analyse wird anschliessend auf
    Waldflächen mit forest_typ = 1 beschränkt. Mithilfe einer euklidischen Distanztransformation wird der Abstand jeder potenziellen Lückenfläche zur nächstgelegenen Baumfläche berechnet. Waldlücken werden gemäss dem
