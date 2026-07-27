@@ -35,9 +35,9 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
           -> gap_pixels.tif
 9. Polygonisierung der gap_pixels <br>
           -> gap_polygons.gpkg
-10. 5 Meter Buffer von den gap_polygons
+10. 5 Meter Buffer von den gap_polygons <br>
           -> gap_buffered_polygons.gpkg
-12. Polygone rausnehmen, die Rand von 'forest_typ = 1' schneiden.
+12. Polygone rausnehmen, die Rand von 'forest_typ = 1' schneiden. <br>
           -> gap_polygons_final.gpkg
 
 ### Geplant:
