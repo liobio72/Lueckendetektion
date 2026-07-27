@@ -21,10 +21,9 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
    Nur Polygone mit 'forest_typ = 1' (Deckungsgrad der Vegetation über 80%) werden verwendet.
 3. Waldmaske rasterisieren
    Binärer Raster aus der Waldmaske. 1, wenn 'forest_typ=1'. 0, wenn 'forest_typ NOT 1'.
-4. Binäre Baummaske ableiten
-   Binärer Raster aus dem Vegetationshöhenmodell. 1, wenn 'Vegetationshöhe >= 3m'. 0, wenn 'Vegetationshöhe < 3m'.
-5. Kombinieren der zwei Raster
-6. Lückendetektion.....
+4. Raster für die Suche der Waldlücken
+   Kombinieren der beiden vorherigen Raster mit 3 verschiedenen Values; 0 = Nicht Wald-Fläche, 1 = Waldfläche, 2 = potenzielle Lücken.
+5. Lückendetektion.....
 
 ### Geplant:
 - Euklidische Distanztransformation -> Distanz von einem Pixel zum nächsten Baum-Pixel.
