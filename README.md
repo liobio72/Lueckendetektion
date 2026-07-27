@@ -16,7 +16,7 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
 
 ## Workflow:
 1. Import der Daten <br>
-   Vegetationshöhenmodell und Waldmaske <br>
+   Vegetationshöhenmodell und Waldmaske importieren. <br>
           -> vegetationshoehenmodell.tif <br>
           -> Waldmaske.shp <br>
 2. Waldmaske filtern und rasterisieren <br>
@@ -28,11 +28,13 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
 5. Raster für die Suche der Waldlücken <br>
    Kombinieren der beiden vorherigen Raster mit 3 verschiedenen Values; 0 = Nicht Wald-Fläche, 1 = Waldfläche, 2 = potenzielle Lücken. <br>
           -> waldlueckendetektion_mask.tif <br>
-6. 
-7. Lückendetektion..... <br>
-   Die Waldlückendetektion basiert auf einem rasterbasierten Vegetationshöhenmodell. Zunächst werden alle Pixel mit einer Vegetationshöhe von mindestens 3 m als Baumflächen klassifiziert. Die Analyse wird anschliessend auf
-   Waldflächen mit forest_typ = 1 beschränkt. Mithilfe einer euklidischen Distanztransformation wird der Abstand jeder potenziellen Lückenfläche zur nächstgelegenen Baumfläche berechnet. Waldlücken werden gemäss dem
-   definierten Mindestabstand von 10 m zwischen gegenüberliegenden Kronentraufen identifiziert.
+6. Euklidische Distanzanalyse <br>
+   Distanz von jedem Pixel mit Value = 2 (potenzielle Lücke) zu einem Pixel mit Value = 1 (Waldfläche). <br>
+          -> gap_distance.tif
+7. Pixel mit mindestens 5 Metern Distanz filtern.
+8. diese Pixel polygonisieren.
+9. 5 Meter Buffer.
+10. Polygone rausnehmen, die 'forest_typ = 1' schneiden.
 
 ### Geplant:
 - Euklidische Distanztransformation -> Distanz von einem Pixel zum nächsten Baum-Pixel.
