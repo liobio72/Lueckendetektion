@@ -25,16 +25,17 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
 3. Baummaske ableiten <br>
    Im Vegetationshoehenmodell nur Punkte mit Höhe >= 3 Meter nehmen und rasterisieren. <br>
           -> tree_mask.tif <br>
-5. Raster für die Suche der Waldlücken <br>
+4. Raster für die Suche der Waldlücken <br>
    Kombinieren der beiden vorherigen Raster mit 3 verschiedenen Values; 0 = Nicht Wald-Fläche, 1 = Waldfläche, 2 = potenzielle Lücken. <br>
           -> waldlueckendetektion_mask.tif <br>
-6. Euklidische Distanzanalyse <br>
+5. Euklidische Distanzanalyse <br>
    Distanz von jedem Pixel mit Value = 2 (potenzielle Lücke) zu einem Pixel mit Value = 1 (Waldfläche). <br>
           -> gap_distance.tif
-7. Pixel mit mindestens 5 Metern Distanz filtern.
-8. diese Pixel polygonisieren.
-9. 5 Meter Buffer.
-10. Polygone rausnehmen, die 'forest_typ = 1' schneiden.
+6. Pixel mit mindestens 5 Metern Distanz filtern.
+          -> gap_pixels
+9. diese Pixel polygonisieren.
+10. 5 Meter Buffer.
+11. Polygone rausnehmen, die 'forest_typ = 1' schneiden.
 
 ### Geplant:
 - Euklidische Distanztransformation -> Distanz von einem Pixel zum nächsten Baum-Pixel.
