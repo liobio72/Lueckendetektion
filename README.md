@@ -39,7 +39,7 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
           -> gap_buffered_polygons.gpkg
 9. Polygone rausnehmen, die Rand von 'forest_typ = 1' schneiden. <br>
           -> gap_polygons_final.gpkg
-10. Überbleibende Polygone dissolven (überlappende Polygone mergen) <br>
+10. Polygone dissolven (überlappende Polygone mergen) <br>
           -> gap_polygons_final_merged.gpkg
 
 ### Geplant:
