@@ -37,10 +37,10 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
           -> gap_polygons.gpkg
 8. 5 Meter Buffer von den gap_polygons <br>
           -> gap_buffered_polygons.gpkg
-9. Polygone rausnehmen, die Rand von 'forest_typ = 1' schneiden. <br>
+9. Polygone dissolven (überlappende Polygone mergen) <br>
+          -> gap_dissolved_polygons.gpkg
+10. Polygone rausnehmen, die Rand von 'forest_typ = 1' schneiden. <br>
           -> gap_polygons_final.gpkg
-10. Polygone dissolven (überlappende Polygone mergen) <br>
-          -> gap_polygons_final_merged.gpkg
 
 ### Geplant:
 - Euklidische Distanztransformation -> Distanz von einem Pixel zum nächsten Baum-Pixel.
