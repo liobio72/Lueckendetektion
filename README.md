@@ -24,8 +24,10 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
 `Waldmaske.shp`
 #### 1. Waldmaske filtern
   - Nur Polygone mit 'forest_typ = 1' (Deckungsgrad der Vegetation über 80%) behalten.
+
 `forest_typ1.gpkg`
 #### 2. Waldmaske rasterisieren
+
 `forest_mask.tif`
 #### 3. Baummaske ableiten
   - Im Vegetationshoehenmodell nur Punkte mit 'height >= 3' Meter nehmen und rasterisieren.
