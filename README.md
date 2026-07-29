@@ -19,8 +19,9 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
 
 ## Workflow:
 #### 0. Import der Daten
-  - Vegetationshöhenmodell und Waldmaske importieren. (passiert in Skript 1 und Skript 3.) <br>
-`vegetationshoehenmodell.tif` <br>
+  - Vegetationshöhenmodell und Waldmaske importieren. (passiert in Skript 1 und Skript 3.)
+
+`vegetationshoehenmodell.tif`
 `Waldmaske.shp`
 #### 1. Waldmaske filtern
   - Nur Polygone mit 'forest_typ = 1' (Deckungsgrad der Vegetation über 80%) behalten.
@@ -31,9 +32,11 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
 `forest_mask.tif`
 #### 3. Baummaske ableiten
   - Im Vegetationshoehenmodell nur Punkte mit 'height >= 3' Meter nehmen und rasterisieren.
+
 `tree_mask.tif`
 #### 4. Raster für die Suche der Waldlücken
   - Kombinieren der beiden vorherigen Raster mit 3 verschiedenen Values; 0 = Nicht Wald-Fläche, 1 = Waldfläche, 2 = potenzielle Lücken.
+
 `waldlueckendetektion_mask.tif`
 
 ### Lückendetektion Variante 1:  Euklidische Distanzanalyse
