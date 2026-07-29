@@ -18,44 +18,44 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
   
 
 ## Workflow:
-#### 1. Import der Daten
-  - Vegetationshöhenmodell und Waldmaske importieren.
+#### 0. Import der Daten
+  - Vegetationshöhenmodell und Waldmaske importieren. (passiert in Skript 1 und Skript 3.)
     - 'vegetationshoehenmodell.tif'
     - 'Waldmaske.shp'
-#### 2. Waldmaske filtern
+#### 1. Waldmaske filtern
   - Nur Polygone mit 'forest_typ = 1' (Deckungsgrad der Vegetation über 80%) behalten.
     - 'forest_typ1.gpkg'
-#### 3. Waldmaske rasterisieren
+#### 2. Waldmaske rasterisieren
   - 'forest_mask.tif'
-#### 4. Baummaske ableiten
+#### 3. Baummaske ableiten
   - Im Vegetationshoehenmodell nur Punkte mit 'height >= 3' Meter nehmen und rasterisieren.
     - 'tree_mask.tif'
-#### 5. Raster für die Suche der Waldlücken
+#### 4. Raster für die Suche der Waldlücken
   - Kombinieren der beiden vorherigen Raster mit 3 verschiedenen Values; 0 = Nicht Wald-Fläche, 1 = Waldfläche, 2 = potenzielle Lücken.
     - 'waldlueckendetektion_mask.tif'
 
 ### Lückendetektion Variante 1:  Euklidische Distanzanalyse
-6. Euklidische Distanzanalyse
+#### 5. Euklidische Distanzanalyse
   - Distanz von jedem Pixel mit Value = 2 (potenzielle Lücke) zu einem Pixel mit Value = 1 (Waldfläche).
     - 'gap_distance.tif'
-7. Pixel mit mindestens 5 Metern Distanz filtern.
+#### 6. Pixel mit mindestens 5 Metern Distanz filtern.
     - 'gap_pixels.tif'
-8. Polygonisierung der gap_pixels
+#### 7. Polygonisierung der gap_pixels
     - 'gap_polygons.gpkg'
-9. 5 Meter Buffer von den gap_polygons
+#### 8. 5 Meter Buffer von den gap_polygons
     - 'gap_buffered_polygons.gpkg'
-10. Polygone dissolven (überlappende Polygone mergen)
+#### 9. Polygone dissolven (überlappende Polygone mergen)
     - 'gap_dissolved_polygons.gpkg'
-11. Polygone rausnehmen, die Rand von 'forest_typ = 1' schneiden.
+#### 10. Polygone rausnehmen, die Rand von 'forest_typ = 1' schneiden.
     - **'gap_polygons_final.gpkg'**
 
 ### Lückendetektion Variante 2: Moving Window
-6. Moving Window
+#### 5. Moving Window
   - Ein Kreis mit 10 Meter Durchmesser (* Korrektur-Faktor: 0.98) über die Waldfläche ziehen lassen und jede Lücke, in die der Kreis passt, als Lücke schreiben.
     - 'gap_moving_window.tif'
-7. Polygonisierung der passenden Lücken
+#### 6. Polygonisierung der passenden Lücken
     - 'gap_polygons_moving_window.gpkg'
-8. Überscheidende Polygone mit forest_typ1
+#### 7. Überscheidende Polygone mit forest_typ1
     - **'gap_polygons_final_moving_window.gpkg'**
 
 ### Kontrolle:
