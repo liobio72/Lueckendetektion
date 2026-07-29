@@ -29,7 +29,7 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
    Kombinieren der beiden vorherigen Raster mit 3 verschiedenen Values; 0 = Nicht Wald-Fläche, 1 = Waldfläche, 2 = potenzielle Lücken. <br>
           -> waldlueckendetektion_mask.tif <br>
 <br>
-### Lückendetektion Variante a:  Euklidische Distanzanalyse <br>
+### Lückendetektion Variante a:  Euklidische Distanzanalyse
 5a. Euklidische Distanzanalyse <br>
     Distanz von jedem Pixel mit Value = 2 (potenzielle Lücke) zu einem Pixel mit Value = 1 (Waldfläche). <br>
           -> gap_distance.tif <br>
@@ -44,7 +44,7 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
 10a. Polygone rausnehmen, die Rand von 'forest_typ = 1' schneiden. <br>
           -> gap_polygons_final.gpkg <br>
 <br>
-### Lückendetektion Variante b: Moving Window <br>
+### Lückendetektion Variante b: Moving Window
 5b. Moving Window <br>
     Ein Kreis mit 10 Meter Durchmesser (* Korrektur-Faktor: 0.98) über die Waldfläche ziehen lassen und jede Lücke, in die der Kreis passt, als Lücke schreiben. <br>
           -> gap_moving_window.tif <br>
