@@ -20,12 +20,12 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
 #### 0. Import der Daten
   - Vegetationshöhenmodell und Waldmaske importieren. (passiert in Skript 1 und Skript 3.)
 
-→`vegetationshoehenmodell.tif`
-`Waldmaske.shp`
+→ `vegetationshoehenmodell.tif`
+→ `Waldmaske.shp`
 #### 1. Waldmaske filtern
   - Nur Polygone mit 'forest_typ = 1' (Deckungsgrad der Vegetation über 80%) behalten.
 
-`forest_typ1.gpkg`
+→ `forest_typ1.gpkg`
 #### 2. Waldmaske rasterisieren
 
 `forest_mask.tif`
