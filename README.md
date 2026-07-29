@@ -39,6 +39,7 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
 
 `waldlueckendetektion_mask.tif`
 
+
 ### Lückendetektion Variante 1:  Euklidische Distanzanalyse
 #### 5. Euklidische Distanzanalyse
   - Distanz von jedem Pixel mit Value = 2 (potenzielle Lücke) zu einem Pixel mit Value = 1 (Waldfläche).
@@ -55,6 +56,7 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
 #### 10. Polygone rausnehmen, die Rand von 'forest_typ = 1' schneiden.
 **`gap_polygons_final.gpkg`**
 
+
 ### Lückendetektion Variante 2: Moving Window
 #### 5. Moving Window
   - Ein Kreis mit 10 Meter Durchmesser (* Korrektur-Faktor: 0.98) über die Waldfläche ziehen lassen und jede Lücke, in die der Kreis passt, als Lücke schreiben.
@@ -64,6 +66,7 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
 `gap_polygons_moving_window.gpkg`
 #### 7. Überscheidende Polygone mit forest_typ1
 **`gap_polygons_final_moving_window.gpkg`**
+
 
 ### Kontrolle:
 99. Vergleich 'Lueckendetektion-Polygone' zu 'Luecken interpretiert Luftbild-Polygone'
