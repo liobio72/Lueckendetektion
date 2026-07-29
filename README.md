@@ -16,8 +16,6 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
     - forest_typ = 2 => open forest     (<60% & >20% durchschnittlicher Deckungsgrad)
     - forest_typ = 3 => shrub forest    (Auswertung aus Sentinel 2 Daten)
 
----
-
 ## Workflow:
 #### 0. Import der Daten
   - Vegetationshöhenmodell und Waldmaske importieren. (passiert in Skript 1 und Skript 3.)
