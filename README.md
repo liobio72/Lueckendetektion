@@ -27,35 +27,35 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
     - 'forest_typ1.gpkg'
 3. Waldmaske rasterisieren
   - 'forest_mask.tif'
-3. Baummaske ableiten
+4. Baummaske ableiten
   - Im Vegetationshoehenmodell nur Punkte mit 'height >= 3' Meter nehmen und rasterisieren.
     - 'tree_mask.tif'
-4. Raster für die Suche der Waldlücken
+5. Raster für die Suche der Waldlücken
   - Kombinieren der beiden vorherigen Raster mit 3 verschiedenen Values; 0 = Nicht Wald-Fläche, 1 = Waldfläche, 2 = potenzielle Lücken.
     - 'waldlueckendetektion_mask.tif'
 
-### Lückendetektion Variante a:  Euklidische Distanzanalyse
-5a. Euklidische Distanzanalyse
+### Lückendetektion Variante 1:  Euklidische Distanzanalyse
+6. Euklidische Distanzanalyse
   - Distanz von jedem Pixel mit Value = 2 (potenzielle Lücke) zu einem Pixel mit Value = 1 (Waldfläche).
     - 'gap_distance.tif'
-6a. Pixel mit mindestens 5 Metern Distanz filtern.
+7. Pixel mit mindestens 5 Metern Distanz filtern.
     - 'gap_pixels.tif'
-7a. Polygonisierung der gap_pixels
+8. Polygonisierung der gap_pixels
     - 'gap_polygons.gpkg'
-8a. 5 Meter Buffer von den gap_polygons
+9. 5 Meter Buffer von den gap_polygons
     - 'gap_buffered_polygons.gpkg'
-9a. Polygone dissolven (überlappende Polygone mergen)
+10. Polygone dissolven (überlappende Polygone mergen)
     - 'gap_dissolved_polygons.gpkg'
-10a. Polygone rausnehmen, die Rand von 'forest_typ = 1' schneiden.
+11. Polygone rausnehmen, die Rand von 'forest_typ = 1' schneiden.
     - **'gap_polygons_final.gpkg'**
 
-### Lückendetektion Variante b: Moving Window
-5b. Moving Window
+### Lückendetektion Variante 2: Moving Window
+6. Moving Window
   - Ein Kreis mit 10 Meter Durchmesser (* Korrektur-Faktor: 0.98) über die Waldfläche ziehen lassen und jede Lücke, in die der Kreis passt, als Lücke schreiben.
     - 'gap_moving_window.tif'
-6b. Polygonisierung der passenden Lücken
+7. Polygonisierung der passenden Lücken
     - 'gap_polygons_moving_window.gpkg'
-7b. Überscheidende Polygone mit forest_typ1
+8. Überscheidende Polygone mit forest_typ1
     - **'gap_polygons_final_moving_window.gpkg'**
 
 ### Kontrolle:
