@@ -20,7 +20,7 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
 ## Workflow:
 #### 0. Import der Daten
   - Vegetationshöhenmodell und Waldmaske importieren. (passiert in Skript 1 und Skript 3.)
-    - 'vegetationshoehenmodell.tif'
+`vegetationshoehenmodell.tif`
 `Waldmaske.shp`
 #### 1. Waldmaske filtern
   - Nur Polygone mit 'forest_typ = 1' (Deckungsgrad der Vegetation über 80%) behalten.
@@ -47,7 +47,7 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
 #### 9. Polygone dissolven (überlappende Polygone mergen)
 `gap_dissolved_polygons.gpkg`
 #### 10. Polygone rausnehmen, die Rand von 'forest_typ = 1' schneiden.
-`**gap_polygons_final.gpkg**`
+**`gap_polygons_final.gpkg`**
 
 ### Lückendetektion Variante 2: Moving Window
 #### 5. Moving Window
@@ -56,7 +56,7 @@ Der Datensatz wird zur Beurteilung von Schutzwald verwendet. Schutzwälder könn
 #### 6. Polygonisierung der passenden Lücken
 `gap_polygons_moving_window.gpkg`
 #### 7. Überscheidende Polygone mit forest_typ1
-`gap_polygons_final_moving_window.gpkg`
+**`gap_polygons_final_moving_window.gpkg`**
 
 ### Kontrolle:
 99. Vergleich 'Lueckendetektion-Polygone' zu 'Luecken interpretiert Luftbild-Polygone'
